@@ -1,7 +1,10 @@
 # 😐 bored 😐
 `#noframework` exploring what it looks like to only use js + css + html.
 
-* Make's a call to [bored api](https://www.boredapi.com) for an activity suggestion
+Makes use of [bored api](https://www.boredapi.com) for fun idea generation
+
+* click a box, acknowledging that you are boring (hehe)
+* see a thing ucanduzz
 
 ## check it out here on github
 -------------------------> [😐😐😐](https://davepmiller.github.io/bored/) <-------------------------

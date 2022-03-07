@@ -6,4 +6,3 @@
 ## check it out on your local machine
 * `git clone git@github.com:davepmiller/bored.git`
 * open `index.html` in a browser
->>>>>>> change entry point for github page

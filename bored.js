@@ -20,7 +20,7 @@ const createDomElement = () => {
 const initializeEvents = () => {
   const boredText = document.getElementById(ELEMENT_ID);
   boredText.addEventListener("mousedown", updateActivity);
-  boredText.addEventListener("mouseout", initializeBoredText);
+  boredText.addEventListener("mouseleave", initializeBoredText);
 }
 
 const updateActivity = () => fetch(API_URL).then(parseActivityField).then(renderActivity).catch(console.log);
@@ -31,7 +31,7 @@ const renderActivity = json => document.getElementById(ELEMENT_ID).innerHTML = j
 
 const initializeBoredText = async () => {
   let text = document.getElementById(ELEMENT_ID).innerHTML;
-  text ? await showHappyCowboy() : setText(PLACEHOLDER);
+  text && !text.includes('😐') ? await showHappyCowboy() : setText(PLACEHOLDER);
 }
 
 const showHappyCowboy = async () => {

@@ -5,5 +5,7 @@ class CONFIG {
   static PLACEHOLDER = "<span class='innerHTML'>😐</span>";
   static HAPPY_COWBOY = "<span class='innerHTML'>✨🤠🤌</span>";
   static RESPONSE_FIELD = 'activity';
+  static UPDATE_EVENT = 'mousedown';
+  static REFRESH_EVENT = 'mouseleave';
 }
 

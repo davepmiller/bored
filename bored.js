@@ -1,26 +1,32 @@
 const API_URL = 'https://www.boredapi.com/api/activity';
-const BORED_TEXT_ID = 'boredText';
-const BORED_TEXT_INITIAL_VALUE = 'Bored?';
+const ELEMENT_ID = 'boredText';
+const PLACEHOLDER = 'bored?';
+const RESPONSE_FIELD = 'activity';
 
-const bored = () => {
-  const boredText = document.createElement("p");
-  boredText.setAttribute("class", BORED_TEXT_ID);
-  boredText.setAttribute("id", BORED_TEXT_ID);
-  document.getElementById("app").appendChild(boredText);
+const bored = (parent) => {
+  const boredText = createDomElement();
+  parent.appendChild(boredText);
   initializeBoredText();
-  setEvents();
+  initializeEvents();
 }
 
-const setEvents = () => {
-  const boredText = document.getElementById(BORED_TEXT_ID);
-  const parseActivityField = async r => await r.json().then(json => boredText.innerHTML = json['activity']);
-  const showActivity = () => fetch(API_URL)
-      .then(response => parseActivityField(response))
-      .catch(error => console.log(error));
-  boredText.addEventListener("mousedown", showActivity);
+const createDomElement = () => {
+  const boredText = document.createElement("p");
+  boredText.setAttribute("class", ELEMENT_ID);
+  boredText.setAttribute("id", ELEMENT_ID);
+  return boredText;
+}
+
+const initializeEvents = () => {
+  const boredText = document.getElementById(ELEMENT_ID);
+  boredText.addEventListener("mousedown", updateActivity);
   boredText.addEventListener("mouseout", initializeBoredText);
 }
 
-const initializeBoredText = () => {
-  document.getElementById(BORED_TEXT_ID).innerHTML = BORED_TEXT_INITIAL_VALUE;
-}
+const updateActivity = () => fetch(API_URL).then(parseActivityField).then(renderActivity).catch(console.log);
+
+const parseActivityField = async response => await response.json();
+
+const renderActivity = json => document.getElementById(ELEMENT_ID).innerHTML = json[RESPONSE_FIELD].toLowerCase();
+
+const initializeBoredText = () => document.getElementById(ELEMENT_ID).innerHTML = PLACEHOLDER;

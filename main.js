@@ -5,8 +5,6 @@ const loadScript = (url, onloadCallback) => {
   document.head.appendChild(script);
 }
 
-const onloadCallback = () => {
-  bored();
-}
+const onloadCallback = () => bored(document.getElementById("app"));
 
 loadScript('bored.js', onloadCallback)

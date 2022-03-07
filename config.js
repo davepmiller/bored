@@ -7,5 +7,6 @@ class CONFIG {
   static RESPONSE_FIELD = 'activity';
   static UPDATE_EVENT = 'mousedown';
   static REFRESH_EVENT = 'mouseleave';
+  static WAIT_INTERVAL = 1500;
 }
 

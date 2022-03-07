@@ -37,4 +37,6 @@ const getText = () => document.getElementById(CONFIG.ELEMENT_ID).innerHTML;
 
 const setText = (text) => document.getElementById(CONFIG.ELEMENT_ID).innerHTML = text;
 
-const waitASec = async () => await new Promise(resolve => setTimeout(resolve, 1500));
+const wait = (resolve) => setTimeout(resolve, CONFIG.WAIT_INTERVAL);
+
+const waitASec = async () => await new Promise(wait);

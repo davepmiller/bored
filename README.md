@@ -1,5 +1,5 @@
 # 😐 bored 😐
-`#noframework` exploring what it looks like to only use js + css + html.
+`#noframework` exploring what it looks like to only use js + css + html
 
 Makes use of [bored api](https://www.boredapi.com) for fun idea generation
 

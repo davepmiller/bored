@@ -9,6 +9,7 @@ p {
 
 p:hover {
     animation: shake 0.5s;
+    font-size: large;
 }
 
 @keyframes shake {
@@ -29,7 +30,7 @@ p:hover {
     justify-content: center;
     align-items: center;
     height: 98vh;
-    background-color: darkseagreen;
+    background-color: #BBA668;
 }
 
 .boredText {
@@ -38,5 +39,9 @@ p:hover {
     min-width: 10vw;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: #F0F8D6;
+}
+
+.innerHTML {
+    font-size: xxx-large;
 }

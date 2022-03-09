@@ -1,4 +1,4 @@
-class CONFIG {
+export default class config {
   static APP_ELEMENT_ID = "app";
   static API_URL = 'https://www.boredapi.com/api/activity';
   static ELEMENT_ID = 'boredText';
@@ -9,4 +9,3 @@ class CONFIG {
   static REFRESH_EVENT = 'mouseleave';
   static WAIT_INTERVAL = 1500;
 }
-
